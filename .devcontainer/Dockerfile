@@ -1,9 +1,12 @@
-FROM mcr.microsoft.com/devcontainers/python:1-3.11
+FROM python:3.11-slim
 
-RUN apt-get update && apt-get install -y git
+WORKDIR /app
 
-WORKDIR /workspaces/${localWorkspaceFolderBasename}
+RUN apt-get update && apt-get install -y git && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt ./
-RUN pip install -r requirements.txt
 
+# Upgrade pip first, then install dependencies without cache
+RUN python -m pip install --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
