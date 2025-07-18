@@ -1,7 +1,11 @@
 # *RAG Chatbot*
 
-**Key Features**
-- Document upload
-- Store vector database
+## **Key Features**
+- Support document upload and parsing
+- Build vector database
 - Apply RAG
-- Connect to simple LLM
+- Connect to simple LLM for querying
+
+## Required Libraries
+- Streamlit for showcasing
+- 
