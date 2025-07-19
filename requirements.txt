@@ -1,1 +1,9 @@
-
+langchain
+transformers @ git+https://github.com/huggingface/transformers.git@main
+sentence-transformers
+faiss-cpu
+torch
+huggingface-hub
+streamlit
+ipywidgets
+python-dotenv
