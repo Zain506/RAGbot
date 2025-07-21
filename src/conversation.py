@@ -21,7 +21,7 @@ class Conversation:
         self.messages = []
         return None
     
-    def speak(self,query: str) -> list: # speak to LLM
+    def speak(self, query: str) -> list: # speak to LLM
         self.messages.append({"role": "user", "content": query})
         response = self.pipe(self.messages)
         self.messages = response[0]["generated_text"]
