@@ -54,8 +54,11 @@ st.markdown("""
     }
 """, unsafe_allow_html=True)
 
-
-convo = Conversation()
+model = st.text_input("Enter a model")
+if model:
+    convo = Conversation(model)
+else:
+    convo = Conversation()
 
 st.title("My RAGBot")
 # Initialize message state
